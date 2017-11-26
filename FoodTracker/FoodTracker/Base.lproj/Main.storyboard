@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,8 +17,79 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="atA-sY-COu">
+                                <rect key="frame" x="0.0" y="80" width="320" height="137"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AUg-S1-Fth">
+                                        <rect key="frame" x="20" y="20" width="87" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="87" height="21"/>
+                                        </variation>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter meal name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ADQ-xR-DuZ">
+                                        <rect key="frame" x="20" y="49" width="280" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="29" width="288" height="30"/>
+                                        </variation>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q83-Rs-lWe">
+                                        <rect key="frame" x="20" y="87" width="151" height="30"/>
+                                        <state key="normal" title="Set Default Label Text"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ADQ-xR-DuZ" firstAttribute="top" secondItem="AUg-S1-Fth" secondAttribute="bottom" constant="8" id="8h1-1U-Z0t"/>
+                                    <constraint firstAttribute="trailing" secondItem="ADQ-xR-DuZ" secondAttribute="trailing" id="arA-q7-aOG"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="8h1-1U-Z0t"/>
+                                        <exclude reference="arA-q7-aOG"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" alignment="top" axis="vertical" misplaced="YES">
+                                    <rect key="frame" x="16" y="40" width="288" height="97"/>
+                                    <mask key="constraints">
+                                        <include reference="8h1-1U-Z0t"/>
+                                        <include reference="arA-q7-aOG"/>
+                                    </mask>
+                                </variation>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="atA-sY-COu" secondAttribute="trailing" id="5nR-dw-PQ8"/>
+                            <constraint firstItem="atA-sY-COu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="IHf-mZ-Qht"/>
+                            <constraint firstItem="atA-sY-COu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="W2v-pq-DI3"/>
+                            <constraint firstItem="atA-sY-COu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="cCC-Sx-ZPZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="atA-sY-COu" secondAttribute="trailing" id="dss-C7-Wg4"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="5nR-dw-PQ8"/>
+                                <exclude reference="IHf-mZ-Qht"/>
+                                <exclude reference="W2v-pq-DI3"/>
+                                <exclude reference="cCC-Sx-ZPZ"/>
+                                <exclude reference="dss-C7-Wg4"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="5nR-dw-PQ8"/>
+                                <include reference="IHf-mZ-Qht"/>
+                                <include reference="W2v-pq-DI3"/>
+                                <include reference="cCC-Sx-ZPZ"/>
+                                <include reference="dss-C7-Wg4"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
